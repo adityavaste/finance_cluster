@@ -14,3 +14,6 @@ variable "vpc_cidr" {
   type = string
 }
 
+variable "k_cluster_name" {
+  type = string
+}
