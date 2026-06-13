@@ -25,5 +25,11 @@ pipeline {
                 sh 'terraform apply -auto-approve tfplan'
             }
         }
+
+        stage('print') {
+            steps {
+                sh 'echo "cluster created successfully"'
+            }
+        }
     }
 }
