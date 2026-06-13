@@ -8,9 +8,11 @@ variable "private_subnet_cidr" {
 variable "availability_zones" {
   type = list(string)
 }
+
 variable "vpc_cidr" {
   type = string
 }
+
 variable "k_cluster_name" {
   type = string
 }
