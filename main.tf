@@ -6,7 +6,7 @@ module "vpc" {
   private_subnet_cidr = var.private_subnet_cidr
   availability_zones  = var.availability_zones
 
-  k_cluster_name = var.k_cluster_name
+ 
 }
 
 module "eks" {
