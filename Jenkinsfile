@@ -1,34 +1,46 @@
 pipeline {
     agent any
 
+    parameters {
+        choice(
+            name: 'ACTION',
+            choices: ['apply', 'destroy'],
+            description: 'Terraform Action'
+        )
+    }
+
     stages {
-        stage('Init') {
+
+        stage('Terraform Init') {
             steps {
                 sh 'terraform init'
             }
         }
 
-        stage('Validate') {
+        stage('Terraform Plan') {
+            when {
+                expression { params.ACTION == 'apply' }
+            }
             steps {
-                sh 'terraform validate'
+                sh 'terraform plan'
             }
         }
 
-        stage('Plan') {
+        stage('Terraform Apply') {
+            when {
+                expression { params.ACTION == 'apply' }
+            }
             steps {
-                sh 'terraform plan -out=tfplan'
+                sh 'terraform apply -auto-approve'
             }
         }
 
-        stage('Apply') {
-            steps {
-                sh 'terraform apply -auto-approve tfplan'
+        stage('Terraform Destroy') {
+            when {
+                expression { params.ACTION == 'destroy' }
             }
-        }
-
-        stage('print') {
             steps {
-                sh 'echo "cluster created successfully"'
+                sh 'terraform destroy -auto-approve'
             }
         }
     }
