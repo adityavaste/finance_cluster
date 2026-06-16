@@ -39,6 +39,6 @@ variable "desired_size" {
   type = number
 }
 
-variable "k_cluster_name" {
+variable "k_dev_eks_cluster" {
   type = string
 }
