@@ -1,5 +1,5 @@
-resource "aws_eks_cluster" "k_cluster" {
-  name = var.k_cluster_name
+resource "aws_eks_cluster" "k_dev_eks_cluster" {
+  name = var.k_dev_eks_cluster
 
   access_config {
     authentication_mode = "API"

@@ -11,6 +11,6 @@ variable "availability_zones" {
 variable "vpc_cidr" {
   type = string
 }
-variable "k_cluster_name" {
+variable "k_dev_eks_cluster" {
   type = string
 }

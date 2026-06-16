@@ -1,4 +1,4 @@
-aws_region = "ap-south-1"
+aws_region = "ap-southeast-1"
 
 vpc_name = "k_dev-vpc"
 
@@ -6,9 +6,9 @@ vpc_cidr = "10.0.0.0/16"
 
 availability_zones = [
 
-"ap-south-1a",
+"ap-southeast-1a",
 
-"ap-south-1b"
+"ap-southeast-1b"
 
 ]
 
@@ -28,7 +28,7 @@ private_subnet_cidr = [
 
 ]
 
-k_cluster_name = "k-dev-eks-cluster"
+k_dev_eks_cluster = "k-dev-eks-cluster"
 
 desired_size = 1
 
